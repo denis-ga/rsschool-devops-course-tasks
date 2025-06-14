@@ -1,0 +1,80 @@
+# .gitignore для Terraform проектов
+
+# Terraform state files - содержат чувствительные данные
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+
+# Terraform variable files с чувствительными данными
+*.tfvars
+*.tfvars.json
+terraform.tfvars
+terraform.tfvars.json
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Terraform plan files
+*.tfplan
+*.tfplan.*
+
+# Terraform lock files (спорно, но часто игнорируют)
+.terraform.lock.hcl
+
+# Terraform directories
+.terraform/
+.terraform.lock.hcl
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# AWS credentials
+.aws/
+aws-credentials.json
+
+# Azure credentials  
+.azure/
+
+# GCP credentials
+gcp-credentials.json
+service-account.json
+
+# Ansible
+*.retry
+
+# Logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Temporary files
+tmp/
+temp/
