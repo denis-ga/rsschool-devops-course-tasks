@@ -79,6 +79,11 @@ jobs:
         with:
           script: |
             const fs = require('fs');
+            if (!fs.existsSync('plan.txt')) {
+              console.log('plan.txt not found, skipping comment');
+              return;
+            }
+
             const plan = fs.readFileSync('plan.txt', 'utf8');
             const maxGitHubBodyCharacters = 65536;
 
