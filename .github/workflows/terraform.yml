@@ -45,6 +45,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-session-name: terraform-plan-session
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Setup Terraform
@@ -102,7 +103,7 @@ jobs:
             for (let i = 0; i < planChunks.length; i++) {
               const output = `### Terraform Plan Output (Part ${i + 1}/${planChunks.length})
               
-              \`\`\`
+              \`\`\`hcl
               ${planChunks[i]}
               \`\`\`
               
@@ -131,6 +132,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          role-session-name: terraform-apply-session
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Setup Terraform

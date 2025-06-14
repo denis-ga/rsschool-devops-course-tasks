@@ -11,8 +11,7 @@ variable "dynamodb_table_name" {
 }
 
 provider "aws" {
-  profile = "aws-rs-devops"
-  region  = "eu-west-1"
+  region = var.region
 }
 
 resource "aws_s3_bucket" "terraform_state" {
