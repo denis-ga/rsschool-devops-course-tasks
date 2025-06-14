@@ -159,6 +159,6 @@ resource "aws_iam_role_policy" "github_actions_policy" {
 }
 
 output "github_actions_role_arn" {
-  value = aws_iam_role.github_actions_role.arn
+  value       = aws_iam_role.github_actions_role.arn
   description = "ARN роли для GitHub Actions"
 }
